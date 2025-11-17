@@ -22,6 +22,10 @@ public class MainVehicul {
         v1=new Vehicul();
         v2=new Vehicul("Peugeot",3000.99f);
         v3=new Vehicul(v2);
+
+        e1 = new Electrica();
+        e2 = new Electrica("Tesla", 300000, (byte)250, 100);
+        e3 = new Electrica(e2);
         
         System.out.println("Vehicul 1 "+v1);
         System.out.println("Vehicul 2 "+v2);

@@ -37,7 +37,10 @@ public class Vehicul implements Reincarcabil{
     public String toString(){
         return "Marca: "+marca+" pret="+pret;
     }
-
+//getter Mihaluta
+    public float getPret(){
+        return pret;
+    }
     @Override
     public void reincarca(){
         System.out.println("Nu se aplica");

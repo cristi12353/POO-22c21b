@@ -60,4 +60,13 @@ public class Trotineta extends Vehicul implements Reincarcabil{
     public void reincarca(){
        System.out.println("Perioada de incarcare="+capacitateBaterie/2);
     }
-}
+         //Cod Sumurduc Aurelian-Andrei
+    public void Capacitate_mai_mare_de(int capacitate) {
+        Trotineta a = (Trotineta) this;
+        if(a.capacitateBaterie > capacitate) {
+            System.out.println(a.marca + " are capacitate diferita de: " + capacitate);
+        }
+    }
+//Cod Sumurduc Aurelian-Andrei
+
+    }

@@ -50,6 +50,29 @@ public class MainVehicul {
         t1.reincarca();
 
         Reincarcabil[] vect = new Reincarcabil[]{v1, v2, v3, m1, m2, m3, e1, e2, e3, t1, t2, t3};
+        
+//cod David Dascalu
+        Vehicul[] masini = {
+                new Vehicul("Dacia", 30000),
+                new Vehicul("BMW", 80000),
+                new Vehicul("Audi", 45000),
+                new Vehicul("Renault", 28000),
+                new Vehicul("BMW", 60000)
+        };
+
+        String marcaInterzisa = "BMW";
+        float pretMaxim = 50000;
+
+        System.out.println("Vehicule permise:");
+
+        for (Vehicul v : masini) {
+            if (!v.marca.equals(marcaInterzisa) && v.getPret() <= pretMaxim) {
+                System.out.println(v);
+            }
+        }
+    }
+}
+//cod David Dascalu
 
         System.out.println("\nAfisare dupa marca 'Tesla':");
         for (Reincarcabil item : vect) {

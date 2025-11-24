@@ -95,9 +95,6 @@ public class MainVehicul {
 
 //cod Mihaluta Andrei
 
-    public class Main {
-    public static void main(String[] args) {
-
         Object[] vector = new Object[5];
 
         vector[0] = new Vehicul("BMW", 25000f);

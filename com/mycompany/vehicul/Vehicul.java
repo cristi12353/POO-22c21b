@@ -37,4 +37,18 @@ public class Vehicul implements Reincarcabil{
     public void reincarca(){
         System.out.println("Nu se aplica");
     }
+
+    @Override
+    public void afiseazaDupaMarca(String marca) {
+        if (this.marca != null && this.marca.equals(marca)) {
+            System.out.println(this);
+        }
+    }
+
+    @Override
+    public void afiseazaDupaPret(float min, float max) {
+        if (this.pret >= min && this.pret <= max) {
+            System.out.println(this);
+        }
+    }
 }

@@ -43,7 +43,7 @@ public class MainVehicul {
         System.out.println(e2);
         System.out.println(t1);
 
-        System.out.println("\nTest reincarcare (only for Reincarcabil implementations):");
+        System.out.println("\nTest reincarcare");
         e1.reincarca();
         e2.reincarca();
         e3.reincarca();

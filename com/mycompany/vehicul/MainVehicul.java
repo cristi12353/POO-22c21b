@@ -52,11 +52,11 @@ public class MainVehicul {
         Reincarcabil[] vect = new Reincarcabil[]{v1, v2, v3, m1, m2, m3, e1, e2, e3, t1, t2, t3};
         
         //Dragaescu Cosmin
-        Trotineta[] trotinete=new Trotineta[3];
-        trotinete[0]= new Trotineta ("Myiria",1200,60,(byte) 50);
-        trotinete[1]= new Trotineta("Kukirin",2000,100,(byte) 70);
-        trotinete[2]= new Trotineta("Xiaomi",1700,150,(byte) 65);
-
+       Trotineta[] trotinete = {
+    new Trotineta("Myiria", 1200, 60, (byte)50),
+    new Trotineta("Kukirin", 2000, 100, (byte)70),
+    new Trotineta("Xiaomi", 1700, 150, (byte)65)
+};
 
         //Dragaescu Cosmin
         System.out.println("\n Afisare in functie de pret: ");

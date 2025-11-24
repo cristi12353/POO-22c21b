@@ -69,4 +69,13 @@ public class Trotineta extends Vehicul implements Reincarcabil{
     }
 //Cod Sumurduc Aurelian-Andrei
 
+        //Cod Isaia George----
+    public boolean verificaCapacitateMaiMic(int capacitateBaterie){
+        if (this.capacitateBaterie < capacitateBaterie){
+            return true;
+        }
+        return false;
+    }
+    //Cod Isaia George ^
+
     }

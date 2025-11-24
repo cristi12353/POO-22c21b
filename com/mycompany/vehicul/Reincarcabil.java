@@ -10,4 +10,19 @@ package com.mycompany.vehicul;
  */
 public interface Reincarcabil {
     void reincarca();
+    
+    default void afiseazaDupaMarca(String marca){
+            Vehicul v = (Vehicul) this;
+            if(v.marca!=null && v.marca.equals(marca)){
+                System.out.println(v);
+            }
+    }
+
+    default void afiseazaDupaPret(float min, float max){
+            Vehicul v = (Vehicul) this;
+            if(v.pret >= min && v.pret <= max){
+                System.out.println(v);
+            }
+    }
+}
 }

@@ -18,39 +18,48 @@ public class MainVehicul {
         Masina m1, m2, m3;
         Electrica e1, e2, e3;
         Trotineta t1, t2, t3;
-        
-        v1=new Vehicul();
-        v2=new Vehicul("Peugeot",3000.99f);
-        v3=new Vehicul(v2);
+
+        v1 = new Vehicul();
+        v2 = new Vehicul("Peugeot", 3000.99f);
+        v3 = new Vehicul(v2);
+
+        m1 = new Masina("Ford", 20000f, (byte) 180);
+        m2 = new Masina();
+        m3 = new Masina(m1);
 
         e1 = new Electrica();
-        e2 = new Electrica("Nissan", 50000f, (byte) 200, 75);
+        e2 = new Electrica("Tesla", 300000f, (byte) 250, 100);
         e3 = new Electrica(e2);
-        
-        e1 = new Electrica();
-        e2 = new Electrica("Tesla", 300000, (byte)250, 100);
-        e3 = new Electrica(e2);
-        
-        System.out.println("Vehicul 1 "+v1);
-        System.out.println("Vehicul 2 "+v2);
-        System.out.println("Vehicul 3 "+v3);
 
-        System.out.println("Electrica 1" + e1);
+        t1 = new Trotineta("Xiaomi", 1200f, 50, (byte) 30);
+        t2 = new Trotineta();
+        t3 = new Trotineta(t1);
+
+        System.out.println("Vehicule create:\n");
+        System.out.println(v1);
+        System.out.println(v2);
+        System.out.println(v3);
+        System.out.println(m1);
+        System.out.println(e2);
+        System.out.println(t1);
+
+        System.out.println("\nTest reincarcare (only for Reincarcabil implementations):");
         e1.reincarca();
-        System.out.println("Electrica 2" + e2);
         e2.reincarca();
-        System.out.println("Electrica 3" + e3);
         e3.reincarca();
-        
-        System.out.println("\nElectrica 1 " + e1);
-        e1.reincarca();
-        System.out.println("Electrica 2 " + e2);
-        e2.reincarca();
-        System.out.println("Electrica 3 " + e3);
-        e3.reincarca();
+        t1.reincarca();
 
+        Reincarcabil[] vect = new Reincarcabil[]{v1, v2, v3, m1, m2, m3, e1, e2, e3, t1, t2, t3};
 
-        System.out.println("Electrica 3 " + e3);
+        System.out.println("\nAfisare dupa marca 'Tesla':");
+        for (Reincarcabil item : vect) {
+            item.afiseazaDupaMarca("Tesla");
+        }
+
+        System.out.println("\nAfisare dupa pret intre 1000 si 100000:");
+        for (Reincarcabil item : vect) {
+            item.afiseazaDupaPret(1000f, 100000f);
+        }
         
     }
     

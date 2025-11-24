@@ -10,7 +10,7 @@ package com.mycompany.vehicul;
  */
 //
 
-public class Vehicul {
+public class Vehicul implements Reincarcabil{
 
     public String marca;
     float pret;
@@ -31,5 +31,10 @@ public class Vehicul {
     @Override
     public String toString(){
         return "Marca: "+marca+" pret="+pret;
+    }
+
+    @Override
+    public void reincarca(){
+        System.out.println("Nu se aplica");
     }
 }

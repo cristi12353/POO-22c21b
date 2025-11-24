@@ -175,6 +175,31 @@ public class MainVehicul {
             System.out.println(vector2[2]);
 
 // Cod Sumurduc Aurelian-Andrei
+
+                ////lungu florin
+       
+        Masina[] masini = {
+                new Masina("Tesla", 50000f, (byte) 250), 
+                new Masina("Nissan", 35000f, (byte) 200),
+                new Masina("Audi", 60000f, (byte) 220), // Audi, Preț 60000
+                new Masina("Renault", 45000f, (byte) 180) // Renault, Preț 45000
+            };
+
+       
+            String marcaInterzisa = "Audi";  // Marca interzisă este Audi
+            float pretMaxim = 45000f;        // Prețul maxim permis este 45000
+
+           
+            System.out.println("Masini permise (fără marca interzisă și cu preț <= " + pretMaxim + "):");
+            for (Masina m : masini) {
+               
+                if (!m.marca.equals(marcaInterzisa) && m.getPret() <= pretMaxim) {
+                    System.out.println(m);  
+        
+    }
+            }
+}
+     //// lungu florin
         
     }
     

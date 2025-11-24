@@ -180,5 +180,23 @@ public class MainVehicul {
 // Cod Sumurduc Aurelian-Andrei
         
     }
-    
+//COD Dragnea CrIstian Romeo
+    Trotineta[] trotinete = new Trotineta[5];
+    trotinete[0] = new Trotineta("Xiaomi", 2000.0f, 300, (byte)20);
+    trotinete[1] = new Trotineta("Kukirin", 2500.0f, 600, (byte)50);
+    trotinete[2] = new Trotineta("Razer", 1500.0f, 250, (byte)15);
+    trotinete[3] = new Trotineta("Huawei", 3000.0f, 500, (byte)35);
+    trotinete[4] = new Trotineta("Apple", 2750.0f, 500, (byte)40);
+
+    Scanner sc = new Scanner(System.in);
+        System.out.println("Introduceti maxim pret: ");
+    float pret = sc.nextFloat();
+        System.out.println("Introduceti maxim capacitate baterie");
+    byte autonomie = sc.nextByte();
+        for(Trotineta a : trotinete){
+        if(a.verifPret(pret) && a.verifAutonomieAcc(autonomie)){
+            System.out.println(a);
+        }
+    }
+//cod Dragnea Cristian
 }

@@ -70,3 +70,28 @@ public class Trotineta extends Vehicul implements Reincarcabil{
 //Cod Sumurduc Aurelian-Andrei
 
     }
+
+
+//Cod Niculescu Alexandra-Christine
+
+ public static void afiseazaMarcaAutonomie(Trotineta t) {
+        System.out.println("Marca = " + t.marca +
+                           ", autonomie acumulator = " + t.autonomieAcumulator);
+    }
+
+public void afiseazaDetalii() {
+        System.out.println(this.toString());
+    }
+
+@Override
+    public String toString() {
+        return "Marca = " + this.marca +
+               ", autonomie acumulator = " + this.autonomieAcumulator +
+               ", capacitate baterie = " + this.capacitateBaterie +
+               ", pret = " + this.getPret();
+    }
+
+   @Override
+    public void reincarca() {
+        System.out.println("Perioada de incarcare = " + capacitateBaterie / 2);
+    }

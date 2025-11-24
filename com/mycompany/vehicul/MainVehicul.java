@@ -74,6 +74,53 @@ public class MainVehicul {
 }
 //cod David Dascalu
 
+//cod Prozan Bogdan Madalin
+        Scanner in = new Scanner(System.in);
+        System.out.println("Introdu marca acceptata: ");
+        String marcaAcceptata = in.nextLine();
+
+        System.out.println("Introdu pretul minim: ");
+        float pretMin = in.nextFloat();
+
+        System.out.println("Introdu pretul maxim: ");
+        float pretMax = in.nextFloat();
+        in.nextLine();
+
+        System.out.println("Introdu numarul de vehicule: ");
+        int n = in.nextInt();
+        in.nextLine();
+
+        int i=0;
+        Vehicul[] vehicule= new Vehicul[n];
+        vehicule[i] = new Vehicul();
+
+        for(i = 0; i<n; i++){
+            vehicule[i] = new Vehicul();
+
+            System.out.print("Marca vehiculului " + (i+1)+": ");
+            vehicule[i].marca = in.nextLine();
+
+            System.out.print("Pretul vehiculului " + (i+1)+": ");
+            vehicule[i].pret = in.nextFloat();
+            in.nextLine();
+
+            if(vehicule[i].marca.equals(marcaAcceptata)){
+                System.out.println("Marca ACCEPTATA! ");
+
+            }
+            else{
+                System.out.println("Marca NEACCEPTATA! ");
+            }
+
+            if(vehicule[i].pret>=pretMin&&vehicule[i].pret<=pretMax){
+                System.out.println("Pretul este in interval! ");
+            }
+            else{
+                System.out.println("Pretul nu este interval! ");
+            }
+        }
+//cod Prozan Bogdan Madalin
+
         System.out.println("\nAfisare dupa marca 'Tesla':");
         for (Reincarcabil item : vect) {
             item.afiseazaDupaMarca("Tesla");

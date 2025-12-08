@@ -34,5 +34,7 @@ public class Masina extends Vehicul {
             System.out.println(a.marca + " are pret diferit de: " + pret);
         }
     }
+     Masina v1 =  Masina(test.txt,10);
+    v1.SalveazaInFisier();
 //Cod Sumurduc Aurelian-Andrei
 }

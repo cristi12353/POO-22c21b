@@ -66,4 +66,17 @@ public class Vehicul implements Reincarcabil{
         return false;
     }
     //Cod Isaia George ^
+
+    //COD Panaite Cristian Florin
+    public void salveazaInFisier(){
+        try {
+            try(PrintWriter pw = new PrintWriter(new FileWriter("vehicul.txt", true))) {
+                for(Vehicul v : listaVehicule) {
+                    pw.println(v.marca + "," + v.pret);
+                }
+            }
+        } catch (Exception e) {
+            System.out.println("Eroare la salvarea in fisier: " + e.getMessage());
+        }
+    }
 }

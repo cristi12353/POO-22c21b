@@ -221,4 +221,12 @@ public class MainVehicul {
         }
     }
 //cod Dragnea Cristian
+
+    //COD Panaite Cristian Florin
+    //de apelat functia salveazaInFisier() din Vehicul.java
+    Vehicul v4 = new Vehicul("TestMarca", 12345.67f);
+    v4.salveazaInFisier();
+    //COD Panaite Cristian Florin
+
+    
 }

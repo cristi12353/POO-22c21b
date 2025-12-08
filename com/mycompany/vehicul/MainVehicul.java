@@ -129,28 +129,33 @@ public class MainVehicul {
         for (Reincarcabil item : vect) {
             item.afiseazaDupaPret(1000f, 100000f);
         }
-
         //Cod Isaia George---
-        Object[] trotinete = new Trotineta[5];
-        trotinete[0] = new Trotineta("Xiaomi", 2000.0f, 300, (byte)20);
-        trotinete[1] = new Trotineta("Samsung", 2500.0f, 600, (byte)50);
-        trotinete[2] = new Trotineta("Razer", 1500.0f, 250, (byte)15);
-        trotinete[3] = new Trotineta("Huawei", 3000.0f, 500, (byte)35);
-        trotinete[4] = new Trotineta("Apple", 2750.0f, 500, (byte)40);
+        Object[] trotinete1 = new Trotineta[5];
+        trotinete1[0] = new Trotineta("Xiaomi", 2000.0f, 300, (byte) 20);
+        trotinete1[1] = new Trotineta("Samsung", 2500.0f, 600, (byte) 50);
+        trotinete1[2] = new Trotineta("Razer", 1500.0f, 250, (byte) 15);
+        trotinete1[3] = new Trotineta("Huawei", 3000.0f, 500, (byte) 35);
+        trotinete1[4] = new Trotineta("Apple", 2750.0f, 500, (byte) 40);
 
         Scanner sc = new Scanner(System.in);
         System.out.println("Introduceti maxim pret: ");
         float pret = sc.nextFloat();
         System.out.println("Introduceti maxim capacitate baterie");
         int capacitate = sc.nextInt();
-        for(Object tr : trotinete){
-            if(tr instanceof Trotineta){
+        for (Object tr : trotinete1) {
+            if (tr instanceof Trotineta) {
                 Trotineta vr = (Trotineta) tr;
-                if(vr.verificaPretMaiMic(pret) && vr.verificaCapacitateMaiMic(capacitate)){
+                if (vr.verificaPretMaiMic(pret) && vr.verificaCapacitateMaiMic(capacitate)) {
                     System.out.println(tr);
                 }
             }
 
+        }
+
+        Trotineta.scrieFisierTrotineta(trotinete1,"trotineteIsaia");
+        trotinete1 = Trotineta.citesteFisierTrotineta("trotineteIsaia");
+        for( Object tr : trotinete1) {
+            System.out.println(tr);
         }
         //Cod Isaia George ^
 

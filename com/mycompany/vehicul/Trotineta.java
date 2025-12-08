@@ -8,7 +8,15 @@ package com.mycompany.vehicul;
  *
  * @author adina
  */
-public class Trotineta extends Vehicul implements Reincarcabil{
+
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
+import java.util.ArrayList;
+
+public class Trotineta extends Vehicul implements Reincarcabil, Serializable{
     int capacitateBaterie;
     byte autonomieAcumulator;
     
@@ -69,14 +77,33 @@ public class Trotineta extends Vehicul implements Reincarcabil{
     }
 //Cod Sumurduc Aurelian-Andrei
 
-        //Cod Isaia George----
-    public boolean verificaCapacitateMaiMic(int capacitateBaterie){
-        if (this.capacitateBaterie < capacitateBaterie){
+    //Cod Isaia George----
+    public boolean verificaCapacitateMaiMic(int capacitateBaterie) {
+        if (this.capacitateBaterie < capacitateBaterie) {
             return true;
         }
         return false;
     }
-    //Cod Isaia George ^
+    public static void scrieFisierTrotineta(Object[] listaTrotineta, String numeFisier) {
+        try{
+            ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(numeFisier));
+            oos.writeObject(listaTrotineta);
+            oos.close();
+        } catch(Exception e){
+            e.printStackTrace();
+        }
+    }
+
+    public static Object[] citesteFisierTrotineta(String numeFisier){
+        try{
+            ObjectInputStream ois = new ObjectInputStream(new FileInputStream(numeFisier));
+            return (Object[]) ois.readObject();
+        } catch(Exception e){
+            e.printStackTrace();
+            return new Object[2];
+        }
+    }
+    //Cod Isaia George ^^^^
 
     }
 

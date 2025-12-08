@@ -35,4 +35,26 @@ public class Electrica extends Masina implements Reincarcabil{
     public void reincarca(){
        System.out.println("Perioada de incarcare="+capacitateBaterie/10);
     }
+    //cod Dragnea Cristian Romeo
+    public static void scrieFisierElectrica(ArrayList<Electrica> listaElectrica, String numeFisier) {
+    try{
+        ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(numeFisier));
+        oos.writeObject(listaElectrica);
+        System.out.println("S-a scris");
+        oos.close();
+    } catch(Exception e){
+        e.printStackTrace();
+    }
+}
+
+public static ArrayList<Electrica> citesteElectricaFisier(String numeFisier){
+    try{
+        ObjectInputStream ois = new ObjectInputStream(new FileInputStream(numeFisier));
+        return (ArrayList<Electrica>) ois.readObject();
+    } catch(Exception e){
+        e.printStackTrace();
+        return new ArrayList<>();
+    }
+}
+ //cod Dragnea Cristian Romeo
 }

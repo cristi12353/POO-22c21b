@@ -89,7 +89,7 @@ public class Vehicul implements Reincarcabil{
                     String linie;
                     while ((linie = reader.readLine()) != null) {
                         String[] parts = linie.split(";");
-                        if (parts.length == 11) {
+                        if (parts.length == 2) {
                             Vehicul t = new Vehicul(parts[0],parts[1]);
                             listaVehicule.add(t);
                         }
@@ -100,5 +100,82 @@ public class Vehicul implements Reincarcabil{
             System.out.println("Eroare la incarcare din fisier: " + e.getMessage());
         }
     }
+    public static void salveazaVehiculeCSV(Vehicul[] vehicule, String numeFisier) {
+    try (PrintWriter pw = new PrintWriter(new FileWriter(numeFisier))) {
+ 
+        pw.println("marca,pret");
+ 
+        for (Vehicul v : vehicule) {
+            if (v != null) {
+                pw.println(v.marca + "," + v.pret);
+            }
+        }
+ 
+        System.out.println("Vehicule salvate în CSV: " + numeFisier);
+ 
+    } catch (IOException e) {
+        System.out.println("Eroare la salvare CSV: " + e.getMessage());
+    }
+}
+ 
+ 
+    public static List<Vehicul> citesteVehiculeCSV(String numeFisier) {
+    List<Vehicul> lista = new ArrayList<>();
+ 
+    try (BufferedReader br = new BufferedReader(new FileReader(numeFisier))) {
+        String linie;
+ 
+        br.readLine();
+ 
+        while ((linie = br.readLine()) != null) {
+            String[] parts = linie.split(",");
+ 
+            if (parts.length == 2) {
+                String marca = parts[0];
+                float pret = Float.parseFloat(parts[1]);
+ 
+                lista.add(new Vehicul(marca, pret));
+            }
+        }
+ 
+    } catch (IOException e) {
+        System.out.println("Eroare la citire CSV: " + e.getMessage());
+    }
+ 
+    return lista;
+}
+public static void salveazaVehiculeBinar(List<Vehicul> lista, String numeFisier) {
+    try (DataOutputStream dos = new DataOutputStream(new FileOutputStream(numeFisier))) {
+ 
+        for (Vehicul v : lista) {
+            dos.writeUTF(v.marca);
+            dos.writeFloat(v.pret);
+        }
+ 
+        System.out.println("Salvare binara reusita in " + numeFisier);
+ 
+    } catch (IOException e) {
+        System.out.println("Eroare la salvarea binara: " + e.getMessage());
+    }
+}
+ 
+    public static List<Vehicul> citesteVehiculeBinar(String numeFisier) {
+    List<Vehicul> lista = new ArrayList<>();
+ 
+    try (DataInputStream dis = new DataInputStream(new FileInputStream(numeFisier))) {
+ 
+        while (true) {
+            String marca = dis.readUTF();
+            float pret = dis.readFloat();
+            lista.add(new Vehicul(marca, pret));
+        }
+ 
+    } catch (EOFException e) {
+    } catch (IOException e) {
+        System.out.println("Eroare la citirea binara: " + e.getMessage());
+    }
+ 
+    return lista;
+}
     /// COD Panaite Cristian Florin
 }

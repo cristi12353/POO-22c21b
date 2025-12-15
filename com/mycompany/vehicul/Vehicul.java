@@ -12,6 +12,8 @@ package com.mycompany.vehicul;
 
 public class Vehicul implements Reincarcabil{
 
+    private Vector<Vehicul> listaVehicule = new Vector<>();
+
     public String marca;
     float pret;
     
@@ -79,4 +81,24 @@ public class Vehicul implements Reincarcabil{
             System.out.println("Eroare la salvarea in fisier: " + e.getMessage());
         }
     }
+    private void incarcaDinFisier() {
+        try {
+            File fisierVehicul = new File("vehicul.txt");
+            if (fisierVehicul.exists()) {
+                try (BufferedReader reader = new BufferedReader(new FileReader(fisierVehicul))) {
+                    String linie;
+                    while ((linie = reader.readLine()) != null) {
+                        String[] parts = linie.split(";");
+                        if (parts.length == 11) {
+                            Vehicul t = new Vehicul(parts[0],parts[1]);
+                            listaVehicule.add(t);
+                        }
+                    }
+                }
+            }
+        } catch (IOException e) {
+            System.out.println("Eroare la incarcare din fisier: " + e.getMessage());
+        }
+    }
+    /// COD Panaite Cristian Florin
 }
